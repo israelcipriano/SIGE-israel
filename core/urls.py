@@ -1,6 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
+from .views import turma, turma_add1, turma_add2
 
 urlpatterns = [
     path('', views.login_view, name='login'),
@@ -72,4 +73,9 @@ urlpatterns = [
     ), name='password_reset_complete'),
 
     path('painel/aluno/', views.painel_aluno, name='painel_aluno'),
+
+    #Diário
+    path('turma/', turma, name="turma"),
+    path('turma_add1', turma_add1, name="turma_add1"),
+    path('turma_add2', turma_add2, name="turma_add2")
 ]
