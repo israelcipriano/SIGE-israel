@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="{% static 'core/css/cadastro_aluno.css' %}">
 {% endblock %}
 
-
 {% block user_info %}
 
 <!--Só dando uma idéia, não ficaria melhor esse "Olá, Fulano" aparecer só na primeira vez que ele acessar a página? Depois ficaria só a figura de perfil mesmo.-->
@@ -25,6 +24,7 @@
     <!-- Tela de Diário do Professor -->
     <nav>
         <h2>Diário do Professor</h2>
+        <h1 style="color: red; font-style: oblique; background-color: white;">ATENÇÃO: Essa página ainda não está funcionando,<br>desde já agradeço a paciência dos queridos. Obrigada! :") </h1> <br>
 
         <!--Botão do SuperUsuário-->
         {% if request.user.is_superuser %}
@@ -57,12 +57,12 @@
                     <p>Fim</p>
                     <p>Ações</p>
                 </div>
-                {% for diario_turma in diarios %}
+                {% for turma in turmas %}
                     <div>
-                        <p>{{diario_turma.nome}}</p>
-                        <p>{{diario_turma.ano}}</p>
-                        <p>{{diario_turma.data_inicio}}</p>
-                        <p>{{diario_turma.data_fim}}</p>
+                        <p>{{turma.nome}}</p>
+                        <p>{{turma.ano}}</p>
+                        <p>{{turma.data_inicio}}</p>
+                        <p>{{turma.data_fim}}</p>
 
                         <!--Opção do SuperUsuário-->
                         {% if request.user.is_superuser %}
@@ -73,7 +73,7 @@
 
                         <!--Volta pro professor-->
                         <a href="">
-                            <img src="" alt="Ver Turma">
+                            <img src="{% url 'disciplina' %}" alt="Ver Turma">
                         </a>
 
                         <!--SuperUsuário novamente-->

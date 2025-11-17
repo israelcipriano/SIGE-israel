@@ -11,15 +11,13 @@
   <link rel="stylesheet" href="{% static 'core/css/cadastro_aluno.css' %}">
 {% endblock %}
 
-
 {% block user_info %}
-<a href="{% url 'turma' %}" title="Voltar"><i class="fas fa-arrow-left"></i></a>
+
+<a href="{% url 'disciplina' %}" title="Voltar"><i class="fas fa-arrow-left"></i></a>
   <a href="{% url 'logout' %}" title="Sair"><i class="fas fa-power-off"></i></a>
 {% endblock %}
 
 {% block content %}
-
-<!--Tela de Adicionar Turma - Part1 :") "-->
 
     <main>
         
@@ -40,7 +38,7 @@
 
             <!--Cadastro-->
             <div>
-                <form method="POST" action="{% url 'turma_add1' %}">
+                <form method="POST" action="{% url 'disciplina_add1' %}">
                     {% csrf_token %}
                     <p>
                         <label>Nome:</label>
@@ -51,7 +49,7 @@
                         <input type="number" min="2000" max="2100" name="ano" placeholder="Selecione o ano">
                     </p>
                     <p>
-                        <label>Nivel de Ensino:</label>
+                        <label>Nível de Ensino:</label>
                         <select name="nivel">
                             <option disabled selected>Selecione o nível</option>
                             <option>Ensino Fundamental I</option>
@@ -75,7 +73,7 @@
                         <button type="submit">Próximo</button>
                     </p>
                     <p>
-                        <a href="{% url 'turma' %}">Voltar</a>
+                        <a href="{% url 'disciplina' %}">Voltar</a>
                     </p>
                 </form>
             </div>
